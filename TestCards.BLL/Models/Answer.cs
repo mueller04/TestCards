@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace TestCards.BLL
 {
-    class Program
+    public class Answer
     {
-        static void Main(string[] args)
+        public string Text { get; set; }
+        public bool IsCorrect { get; set; }
+
+        public Answer()
         {
-            //HelloWorld
+            IsCorrect = true;
         }
     }
 }
