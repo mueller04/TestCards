@@ -21,23 +21,48 @@ namespace TestCards.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CardRepository _cardRepo;
+        
+
+        public static MainWindow AppWindow;
 
         public MainWindow()
         {
             InitializeComponent();
-            _cardRepo = new CardRepository();
+            
+            AppWindow = this;
         }
 
         private void btnAddCard_Click(object sender, RoutedEventArgs e)
         {
+            AddCardClick();
+        }
+
+        
+        private void AddCardClick()
+        {
+            var addCardWindow = new AddCardWindow();
+            addCardWindow.ShowDialog();
+        }
+
+        private void btnReviewCards_Click(object sender, RoutedEventArgs e)
+        {
+            ReviewCards();
+        }
+
+        private void ReviewCards()
+        {
+            var reviewCardWindow = new ReviewCardWindow();
+            reviewCardWindow.ShowDialog();
+        }
+
+        private void btnAddFlashcard_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
-        //Ask for question, correct answer, and 3 false answers.  Then present the results and give user option to save.
-        private void AddCardClick()
+        private void btnReviewFlashCards_Click(object sender, RoutedEventArgs e)
         {
-            _cardRepo.Add("What are Dolphins", "They are Mammals", "They are fish", "They are Godzilla", "Aliens");
+
         }
 
     }

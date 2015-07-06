@@ -3,7 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="btnAddCard" Content="Add Card" HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Width="88" Height="41" Click="btnAddCard_Click"/>
+        <Button x:Name="btnAddCard" Content="Add Card" HorizontalAlignment="Left" Margin="140,35,0,0" VerticalAlignment="Top" Width="131" Height="53" Click="btnAddCard_Click"/>
+        <Button x:Name="btnReviewCards" Content="Review Cards" HorizontalAlignment="Left" Margin="295,35,0,0" VerticalAlignment="Top" Width="133" Height="53" Click="btnReviewCards_Click"/>
+        <TextBox x:Name="txtMultiChoice" HorizontalAlignment="Left" Height="66" Margin="27,36,0,0" TextWrapping="Wrap" Text="Multiple Choice" VerticalAlignment="Top" Width="99" Foreground="#FF9607F9" FontSize="18" BorderThickness="0" FontFamily="Microsoft NeoGothic" FontWeight="Bold"/>
+        <TextBox x:Name="txtFlashCards" HorizontalAlignment="Left" Height="48" Margin="27,147,0,0" TextWrapping="Wrap" Text="Flashcards" VerticalAlignment="Top" Width="89" SelectionBrush="#FF2A0440" Foreground="#FF9607F9" FontSize="18" BorderThickness="0" FontFamily="Microsoft NeoGothic" FontWeight="Bold"/>
+        <Button x:Name="btnAddFlashcard" Content="Add Card" HorizontalAlignment="Left" Margin="140,135,0,0" VerticalAlignment="Top" Width="131" Height="53" Click="btnAddFlashcard_Click"/>
+        <Button x:Name="btnReviewFlashCards" Content="Review Cards" HorizontalAlignment="Left" Margin="295,135,0,0" VerticalAlignment="Top" Width="133" Height="53" Click="btnReviewFlashCards_Click"/>
 
     </Grid>
 </Window>
