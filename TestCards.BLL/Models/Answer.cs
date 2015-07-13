@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestCards.BLL
 {
+    //test comment
     public class Answer
     {
         public string Text { get; set; }
