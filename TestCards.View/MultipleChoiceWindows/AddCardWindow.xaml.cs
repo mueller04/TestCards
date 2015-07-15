@@ -51,6 +51,7 @@ namespace TestCards.View
                 txtWrongAnswer1.Clear();
                 txtWrongAnswer2.Clear();
                 txtWrongAnswer3.Clear();
+                MessageBox.Show("You have successfully added a Question.");
             }
 
 

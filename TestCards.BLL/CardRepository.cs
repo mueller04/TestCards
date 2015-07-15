@@ -41,7 +41,7 @@ namespace TestCards.BLL
                                     IncorrectAnswer3 = incorrectAnswer3};
 
             
-            GetFromJSON();
+            
             Cards.Add(card);
             WriteToJSON();
         }

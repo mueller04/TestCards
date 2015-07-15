@@ -27,22 +27,35 @@ namespace TestCards.View
         private Answer answer3;
         private Answer answer4;
         private CardRepository CardRepo;
+        private Card randomCard;
 
         public ReviewCardWindow()
         {
-            Random rnd = new Random();
             InitializeComponent();
-            ArrayList cards = new ArrayList();
             CardRepo = new CardRepository();
-            Card randomCard = (Card)CardRepo.GetCard();
+            getNextCardToDisplay();
+        }
+
+        
+        private void getNextCardToDisplay()
+        {
+            ClearRadioButtons();
+            Random rnd = new Random();
+            randomCard = (Card)CardRepo.GetCard();
+            //ArrayList cards = new ArrayList();
+            randomCard = (Card)CardRepo.GetCard();
             txtQuestion.Text = randomCard.Question;
             _randomNumber = rnd.Next(3);
+            populateAnswerFieldsInRandomOrder();
+        }
 
+        public void populateAnswerFieldsInRandomOrder()
+        {
             if (_randomNumber == 0)
             {
                 answer1 = randomCard.CorrectAnswer;
                 txtAnswer1.Text = answer1.Text;
-                
+
                 answer2 = randomCard.IncorrectAnswer1;
                 txtAnswer2.Text = answer2.Text;
 
@@ -52,7 +65,8 @@ namespace TestCards.View
                 answer4 = randomCard.IncorrectAnswer3;
                 txtAnswer4.Text = answer4.Text;
 
-            } else if (_randomNumber == 1)
+            }
+            else if (_randomNumber == 1)
             {
                 answer2 = randomCard.CorrectAnswer;
                 txtAnswer2.Text = answer2.Text;
@@ -66,7 +80,8 @@ namespace TestCards.View
                 answer4 = randomCard.IncorrectAnswer3;
                 txtAnswer4.Text = answer4.Text;
 
-            } else if (_randomNumber == 2)
+            }
+            else if (_randomNumber == 2)
             {
                 answer3 = randomCard.CorrectAnswer;
                 txtAnswer3.Text = answer3.Text;
@@ -80,7 +95,8 @@ namespace TestCards.View
                 answer4 = randomCard.IncorrectAnswer1;
                 txtAnswer4.Text = answer4.Text;
 
-            } else if (_randomNumber == 3)
+            }
+            else if (_randomNumber == 3)
             {
                 answer4 = randomCard.CorrectAnswer;
                 txtAnswer4.Text = answer4.Text;
@@ -143,10 +159,19 @@ namespace TestCards.View
         {
             if (isAnswerCorrect)
             {
-            this.Close();
-            ReviewCardWindow newCardWindowReflexive = new ReviewCardWindow();
-            newCardWindowReflexive.Show();
+                getNextCardToDisplay();
+                //this.Close();
+                //ReviewCardWindow newCardWindowReflexive = new ReviewCardWindow();
+                //newCardWindowReflexive.Show();
             }
+        }
+
+        private void ClearRadioButtons()
+        {
+            radioAnswer1.IsChecked = false;
+            radioAnswer2.IsChecked = false;
+            radioAnswer3.IsChecked = false;
+            radioAnswer4.IsChecked = false;
         }
 
     }
